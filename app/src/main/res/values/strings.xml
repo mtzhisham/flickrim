@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FlickrIM</string>
+=    <string name="excep_not_implemented">"Not yet implemented"</string>
+    <string name="updating">"Updating"</string>
 </resources>
