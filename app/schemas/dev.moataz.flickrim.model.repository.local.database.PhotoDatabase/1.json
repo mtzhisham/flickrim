@@ -1,0 +1,103 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "07f4cd5bd87f36ea8123953895a4e59a",
+    "entities": [
+      {
+        "tableName": "photo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` TEXT NOT NULL, `owner` TEXT, `secret` TEXT, `server` TEXT, `farm` INTEGER, `title` TEXT, `ispublic` INTEGER, `isfriend` INTEGER, `isfamily` INTEGER, `image` BLOB)",
+        "fields": [
+          {
+            "fieldPath": "_id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "secret",
+            "columnName": "secret",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "server",
+            "columnName": "server",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "farm",
+            "columnName": "farm",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ispublic",
+            "columnName": "ispublic",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isfriend",
+            "columnName": "isfriend",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isfamily",
+            "columnName": "isfamily",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "BLOB",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_photo__id",
+            "unique": false,
+            "columnNames": [
+              "_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_photo__id` ON `${TABLE_NAME}` (`_id`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '07f4cd5bd87f36ea8123953895a4e59a')"
+    ]
+  }
+}
